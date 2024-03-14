@@ -1,9 +1,15 @@
 // db.js
 
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname,  '.env') });
+console.log(path.resolve(__dirname,  '.env'));
+
+
 const { MongoClient } = require('mongodb');
 
 // Connection URL
 const uri = process.env.URL;
+console.log(uri);
 
 // Database Name
 const dbName = 'sample_mflix'; // Replace with your database name

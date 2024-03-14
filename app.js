@@ -3,6 +3,9 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
 
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname,  '.env') });
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -15,7 +18,7 @@ app.use(cors({
     credentials: true
   }));
 
-require("dotenv").config({path:"../backend/config/config.env"});
+// require("dotenv").config({path:"../backend/config/config.env"});
 
 const userRouter = require("./routers/userRouter"); 
 const carRouter = require("./routers/carRouter");
